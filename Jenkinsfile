@@ -8,11 +8,17 @@ pipeline {
     }
     
     stages {
-        stage('pull code') {
+  
+        stage('Checkout Git Repository') {
             steps {
-                git branch: 'dev', url: 'https://github.com/Soymilk1006/TripTribe-Backend.git'
+                script {
+                    checkout([$class: 'GitSCM', branches: [[name: '*/dev']], userRemoteConfigs: [[url: 'https://github.com/Soymilk1006/TripTribe-Backend.git']]])
+                }
             }
         }
+
+        // Add additional stages as needed
+    
 
         stage('set up .env file') {
             steps {
