@@ -26,7 +26,7 @@ $ npm run docker:up
 ```
 
 ## Running the app
-
+e
 Ensure the triptribe-backend container is running in Docker Desktop,
 or run `docker compose start` to start the container.
 
