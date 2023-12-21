@@ -25,6 +25,7 @@ The backend is built with the following technologies:
 $ npm run docker:up 
 ```
 
+
 ## Running the app
 e
 Ensure the triptribe-backend container is running in Docker Desktop,
