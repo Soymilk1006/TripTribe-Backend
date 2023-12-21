@@ -11,7 +11,7 @@ The backend is built with the following technologies:
 - [Restful]
 - [GraphQL]
 - [TypeScript]
- 
+ f
 ## Getting Startedfwe
 
 1. Clone the rfepository to your local machine.
