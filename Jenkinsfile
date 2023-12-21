@@ -1,10 +1,10 @@
 pipeline {
     agent {
-        label 'non_critical_task'
+        label 'critical_task'
     }
 
     stages {
-        stage('Checkout Git Repor3sgfitory') {
+        stage('Checkout Git Repository') {
             steps {
                 script {
                     checkout([$class: 'GitSCM', branches: [[name: '*/dev']], userRemoteConfigs: [[url: 'https://github.com/Soymilk1006/TripTribe-Backend.git']]])
