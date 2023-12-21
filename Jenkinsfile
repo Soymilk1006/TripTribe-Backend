@@ -1,12 +1,14 @@
 pipeline {
-    agent any
+    agent {
+        label 'non_critical_task'
+    }
 
     environment {
         registryCredential = 'ecr:ap-southeast-2:awscreds'
         appRegistry = "067912176361.dkr.ecr.ap-southeast-2.amazonaws.com/triptribe-backend"
         backendRegistry = "https://067912176361.dkr.ecr.ap-southeast-2.amazonaws.com"
         AWS_DEFAULT_REGION="ap-southeast-2"
-        PATH="/home/jenkins/node-v20.10.0-linux-x64/bin:/usr/bin:$PATH"
+        PATH="/home/jenkins/node-v20.10.0-linux-x64/bin:$PATH"
     }
 
     
