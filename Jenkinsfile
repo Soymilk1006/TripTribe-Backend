@@ -1,66 +1,44 @@
-
- 
- pipeline {
+pipeline {
     agent {
-        label 'non_critical_task'
+      label 'non_critical_task'
     }
-    tools {
-        jdk 'openjdk'
-        dockerTool 'docker-latest'
-        nodejs 'nodejs-21.4.0'
-        maven 'maven-3.9.6'
-        gradle 'gradle-8.5'
-        nodejs 'nodejs-21.4.0'
 
-   
-        
-    }
-    
-    
-    environment {
-        AWS_DEFAULT_REGION="ap-southeast-2"
-        PATH="/home/jenkins/node-v20.10.0-linux-x64/bin:/usr/bin:$PATH"
-
-
-   }
-   
     stages {
-        stage('Check Java Env') {
+        stage('Configure Git') {
             steps {
-                sh '''
-                    env | grep -e PATH -e JAVA_HOME
-                    which java
-                    java -version
-                '''
+                script {
+                    // Run git config command to modify configuration
+                    sh 'git config --global --add safe.directory "*"'
+                }
             }
         }
-        
-        stage ('Check installed package'){
-            steps {
-              sh '''
-                java --version
-                git --version
-                docker --version
-                node -v
-                npm -v
-                aws --version
-                mvn --version
-                gradle --version
-                vercel --version
-                docker --version
-                terraform --version
-                whereis git
-              '''
-            }
 
-        }
-        
-        stage('deploy to s3 bucket') {
+        stage('Checkout') {
             steps {
-                    withCredentials([aws(accessKeyVariable:'AWS_ACCESS_KEY_ID', credentialsId:'aws_credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-                            sh "aws ec2 describe-instances"
-                    }
+                // Checkout the repository
+                checkout([$class: 'GitSCM', branches: [[name: '*/dev']], userRemoteConfigs: [[url: 'https://github.com/Soymilk1006/TripTribe-Backend.git']]])
             }
+        }
+
+        // Add more stages for your pipeline as needed
+        stage('Build') {
+            steps {
+                // Your build steps here
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Your test steps here
+            }
+        }
+
+        // Add more stages as needed
+    }
+
+    post {
+        always {
+            // Clean up or perform actions that should run regardless of success or failure
         }
     }
 }
