@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('pull code') {
             steps {
-                git branch: 'dev', credentialsId: '927ecf94-de07-45cf-9ff6-a3a2aea54996', url: 'https://github.com/ExploreXperts/TripTribe-Backend.git'
+                git branch: 'dev', url: 'https://github.com/Soymilk1006/TripTribe-Backend.git'
             }
         }
 
@@ -24,37 +24,5 @@ pipeline {
                 DATABASE_NAME=tripTribeDb\' > .env'''
             }
         }
-
-        stage('Build App Image') {
-            steps {
-            
-                script {
-                        dockerImage = docker.build( appRegistry + ":$BUILD_NUMBER", ".")
-                    }
-
-                }
-        }
-
-        stage('Upload App Image') {
-            steps{
-                script {
-                    docker.withRegistry( backendRegistry, registryCredential ) {
-                        dockerImage.push("$BUILD_NUMBER")
-                        dockerImage.push('latest')
-                    }
-                }
-          }
-     }
     }
-    // post {
-    //     // Clean after build
-    //     always {
-    //         cleanWs(cleanWhenNotBuilt: false,
-    //                 deleteDirs: true,
-    //                 disableDeferredWipeout: true,
-    //                 notFailBuild: true,
-    //                 patterns: [[pattern: '.gitignore', type: 'INCLUDE'],
-    //                            [pattern: '.propsfile', type: 'EXCLUDE']])
-    //     }
-    // }
 }
