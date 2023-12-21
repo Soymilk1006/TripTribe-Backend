@@ -4,7 +4,7 @@ pipeline {
     }
 
     stages {
-        stage('Checkout Git Reposgfitory') {
+        stage('Checkout Git Repor3sgfitory') {
             steps {
                 script {
                     checkout([$class: 'GitSCM', branches: [[name: '*/dev']], userRemoteConfigs: [[url: 'https://github.com/Soymilk1006/TripTribe-Backend.git']]])
