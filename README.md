@@ -24,7 +24,7 @@ The backend is built with the following technologies:
 ```bash
 $ npm run docker:up 
 ```
-
+FWE
 
 ## Running the app
 e
