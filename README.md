@@ -10,7 +10,7 @@ The backend is built with the following technologies:
 
 - [Restful]
 - [GraphQL]
-- [TypeScript]
+- [TypeScript]fwef
  ffefe
 ##### zGetting Startedfwefe
 
