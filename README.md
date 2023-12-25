@@ -2,7 +2,7 @@
 
 ## Technologies Used
 
-FE:FEfeThe backend is built with the following technologies:
+FEdfe:FEfeThe backend is built with the following technologies:
 
 - [Nest](https://github.com/nestjs/nest)
 - [MongoDB]
