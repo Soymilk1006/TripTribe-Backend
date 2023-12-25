@@ -10,11 +10,11 @@ feThe backend is built with the following technologies:
 
 - [Restful]
 - [GraphQL]
-- [TypeScript]
+- [TypeScript]fwef
+ ffefe
+##### zGetting Startedfwefe
 
-## Getting Started
-
-1. Clone the repository to your local machine.
+1. Clonfewe the rfepository to your fewlocal machine.
 2. Install the project dependencies by running `npm install`.
 
 ## Setup the Database and Redis locally with Docker Desktop
@@ -24,9 +24,10 @@ feThe backend is built with the following technologies:
 ```bash
 $ npm run docker:up 
 ```
+FWE
 
 ## Running the app
-
+e
 Ensure the triptribe-backend container is running in Docker Desktop,
 or run `docker compose start` to start the container.
 
@@ -66,7 +67,7 @@ $ npm run test:cov
 ```
 
 ````
-
+f
 ## Test API
 
 After starting the app, use postman to test
