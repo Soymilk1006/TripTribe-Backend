@@ -11,7 +11,7 @@ The backend is built with the following technologies:
 - [Restful]
 - [GraphQL]
 - [TypeScript]
- ffe
+ ffefe
 ##### zGetting Startedfwefe
 
 1. Clonfewe the rfepository to your fewlocal machine.
