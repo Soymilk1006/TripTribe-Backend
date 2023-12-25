@@ -12,7 +12,7 @@ The backend is built with the following technologies:
 - [GraphQL]
 - [TypeScript]
  f
-##### Getting Startedfwe
+##### zGetting Startedfwe
 
 1. Clonfewe the rfepository to your local machine.
 2. Install the project dependencies by running `npm install`.
