@@ -14,7 +14,7 @@ The backend is built with the following technologies:
  ffe
 ##### zGetting Startedfwefe
 
-1. Clonfewe the rfepository to your local machine.
+1. Clonfewe the rfepository to your fewlocal machine.
 2. Install the project dependencies by running `npm install`.
 
 ## Setup the Database and Redis locally with Docker Desktop
