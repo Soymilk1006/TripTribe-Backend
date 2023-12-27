@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: $APP_NAME
-        image: "${REPOSITORY_URI}:build${BUILD_NUMBER}-${BUILD_TIMESTAMP}"
+        image: "${REPOSITORY_URI}:${BUILD_NUMBER}"
         imagePullPolicy:
         ports:
         - containerPort: 80
